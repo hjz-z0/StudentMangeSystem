@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zte.sms.dao.GradeDAO">
+
+	<!-- 
+	public List<Grade> selectAll();
+	 -->
+	<select id="selectAll" resultType="grade">
+		SELECT
+			gid,gname,gdesc,state
+		FROM
+			grade
+	</select>
+	<!-- 
+	public Integer selectIdByName(String stringCellValue);
+	 -->
+	<select id="selectGradesByCondition" parameterType="gradeVO" resultType="grade">
+		select
+			*
+		from 
+			grade
+		where
+			 gname like #{gname}
+	</select>
+
+
+	<select id="selectByGname" resultType="grade">
+		SELECT
+			*
+		FROM
+			grade
+		where
+			gname=#{gname}
+
+
+	</select>
+
+	<select id="selectById" resultType="grade">
+		SELECT
+			*
+		FROM
+			grade
+		where
+			gid=#{gid}
+	</select>
+
+	<insert id="insertGrade" parameterType="grade">
+		INSERT INTO
+			grade
+			(gname,gdesc,state)
+		VALUES
+			(#{gname},#{gdesc},#{state})
+	</insert>
+
+	<update id="updateGrade" parameterType="grade">
+		UPDATE
+			grade
+		SET
+			gid=#{gid},gname=#{gname},gdesc=#{gdesc},state=#{state}
+		where
+			gid=#{gid}
+	</update>
+	<update id="updateGradeByState" parameterType="grade">
+		UPDATE
+			grade
+		SET
+			state=#{state}
+		where
+			gid=#{gid}
+	</update>
+	<delete id="deleteGrade">
+		delete
+		from
+			grade
+		where
+			gid=#{gid}
+	</delete>
+</mapper>

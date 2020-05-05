@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zte.sms.dao.CourseDAO">
+  
+  <!-- 
+  List<Course> selectAll();
+   -->
+  <select id="selectAll" resultType="course">
+  SELECT
+	cid,cname,cdesc,state
+  FROM
+	course
+  </select>
+  
+  <!-- 
+  Integer selectIdByName(String stringCellValue);
+   -->
+  <select id="selectIdByName" resultType="int">
+  	select
+  		cid
+  	from
+  		course
+  	where cname=#{cname}
+  </select>
+
+    <select id="selectByCname" resultType="course">
+		SELECT
+			*
+		FROM
+			course
+		where cname=#{cname}
+	</select>
+	<select id="selectById" resultType="course">
+		SELECT
+			*
+		FROM
+			course
+		where
+			cid=#{cid}
+	</select>
+
+    <insert id="insertCourse" parameterType="course">
+		INSERT INTO
+			course
+			(cname,cdesc,state)
+		VALUES
+			(#{cname},#{cdesc},#{state})
+	</insert>
+
+	<update id="updateCourse" parameterType="course">
+		UPDATE
+			course
+		SET
+			cid=#{cid},cname=#{cname},cdesc=#{cdesc},state=#{state}
+		where
+			cid=#{cid}
+	</update>
+
+
+	<delete id="deleteCourse">
+		delete
+		from
+			course
+		where
+			cid=#{cid}
+	</delete>
+</mapper>

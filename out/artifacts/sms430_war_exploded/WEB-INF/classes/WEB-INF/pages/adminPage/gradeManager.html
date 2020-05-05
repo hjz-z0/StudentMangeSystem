@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>学生管理系统</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="../../css/mycss.css" type="text/css"></link>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container nav-height">
+   		<div class="col-sm-3">
+   			<img alt="" src="../../images/logn.png">
+   		</div>
+   		<div class="col-md-3 col-md-offset-6 visible-md-block visible-lg-block">
+   			<p class="p-css">2018 年 4 月 16 日 23:22:00</p>
+   		</div>
+    </div>
+    <div class="nav-style">
+    	<div class="container">
+	    	<div class="col-sm-12">
+	    		<ul class="nav nav-pills">
+				  <li><a href="adminMain.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				  <li><a href="studentManager.html">学生管理</a></li>
+				  <li class="active"><a href="gradeManager.html">班级管理</a></li>
+				  <li><a href="courseManager.html">课程管理</a></li>
+				  <li><a href="blogManager.html">日志管理</a></li>
+				  <li class="dropdown">
+			          <a href="#" data-toggle="dropdown">预留连接 <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">更新个人信息</a></li>
+			            <li><a href="#">修改登录密码</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">退出校园系统</a></li>
+			          </ul>
+			        </li>
+				</ul>
+	   		</div>
+    	</div>
+    </div>
+    <div class="container margin-top-10">
+    	<div class="col-sm-8">
+    		<div class="panel panel-default">
+			  <div class="panel-body">
+			  	<form class="form-inline">
+				  <div class="form-group">
+				    <label>课程:</label>
+				    <input type="text" class="form-control input-sm" placeholder="不填查询所有">
+				  </div>
+			       <button type="reset" class="btn btn-success btn-sm">重&nbsp;&nbsp;置</button>
+			       <button type="submit" class="btn btn-success btn-sm">查&nbsp;&nbsp;询</button>
+				</form>
+				<hr/>
+			   <div class="padding-bottom-3" style="text-align: right;">
+			  		<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addGrade" >添加新班级</button>
+			  	</div>
+			    <table class="table table-hover table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>班级名称</th>
+							<th>班级详情</th>
+							<th>状态</th>
+							<th style="width: 20%;">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>软件开发一班</td>
+							<td>中兴软件开发一班</td>
+							<td>禁用</td>
+							<td>
+								<button type="button" class="btn btn-success btn-xs">启用</button>
+								<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modfiyGrade" >修改</button>
+								<button type="button" class="btn btn-danger btn-xs">删除</button>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>软件开发二班</td>
+							<td>ios软件开发</td>
+							<td>启用</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">禁用</button>
+								<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modfiyGrade" >修改</button>
+								<button type="button" class="btn btn-danger btn-xs">删除</button>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>软件开发三班</td>
+							<td>Android软件开发</td>
+							<td>启用</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">禁用</button>
+								<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modfiyGrade" >修改</button>
+								<button type="button" class="btn btn-danger btn-xs">删除</button>
+							</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>软件开发四班</td>
+							<td>WEB前端开发</td>
+							<td>禁用</td>
+							<td>
+								<button type="button" class="btn btn-success btn-xs">启用</button>
+								<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modfiyGrade" >修改</button>
+								<button type="button" class="btn btn-danger btn-xs">删除</button>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="4" style="text-align: center;">
+							  <ul class="pagination" style="margin: 0px;">
+							    <li>
+							      <a href="#" aria-label="Previous">
+							        <span aria-hidden="true">&laquo;</span>
+							      </a>
+							    </li>
+							    <li class="active"><a href="#">1</a></li>
+							    <li><a href="#">2</a></li>
+							    <li><a href="#">3</a></li>
+							    <li><a href="#">4</a></li>
+							    <li><a href="#">5</a></li>
+							    <li>
+							      <a href="#" aria-label="Next">
+							        <span aria-hidden="true">&raquo;</span>
+							      </a>
+							    </li>
+							  </ul>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			  </div>
+			</div>
+   		</div>
+    	<div class="col-sm-4">
+    		<div class="panel panel-default">
+    		  <div class="panel-heading">
+    		  	 <img alt="" src="../../images/user.png">
+			     <span class="font-style"> 欢迎您：mike管理员！</span>
+    		  </div>
+			  <div class="panel-body">
+			  	<div class="col-sm-12">
+				   	<ul class="nav nav-pills nav-stacked">
+					  <li><a class="btn btn-link" data-toggle="modal" data-target="#modfiyPWD" style="text-align: left;">修改登录密码</a></li>
+					  <li><a href="#">退出校园系统</a></li>
+					</ul>
+			  	</div>
+			  </div>
+			</div>
+			<div class="panel panel-default">
+    		  <div class="panel-heading">
+    		  	 <img alt="" src="../../images/message.png"> 
+			     <span class="font-style">&nbsp;联系我们：</span>
+    		  </div>
+			  <div class="panel-body">
+			  	<address class="padding-left-10 font-info">
+				  <strong>联系地址：</strong><br>
+				  南京市紫荆花路68号中兴通讯南京研发中心<br>
+				  <strong>联系电话：</strong><br>
+				   025-12345678
+				</address>
+			  </div>
+			</div>
+   		</div>
+   	</div>
+    <!-- 页尾 版权声明 -->
+    <div class="container">
+		<div class="col-sm-12 foot-css">
+		        <p class="text-muted credit">
+		            Copyright © 2018 中兴软件 版权所有
+		        </p>
+	    </div>
+    </div>
+    <!-- 密码修改model窗口 -->
+    <div class="modal fade" id="modfiyPWD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">用户密码修改</h4>
+	      </div>
+	      <form action="" class="form-horizontal" method="post">
+		      <div class="modal-body">
+			     <div class="form-group">
+			       <label class="col-sm-3 control-label">登录密码：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="password">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不可为空</label>
+			    </div>
+			     <div class="form-group">
+			       <label class="col-sm-3 control-label">新的密码：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="password">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不可为空</label>
+			    </div>
+			     <div class="form-group">
+			       <label class="col-sm-3 control-label">重复密码：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="password">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不可为空</label>
+			    </div>
+		      </div>
+		      <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">关&nbsp;&nbsp;闭</button>
+		          <button type="reset" class="btn btn-default">重&nbsp;&nbsp;置</button>
+		          <button type="submit" class="btn btn-default">修&nbsp;&nbsp;改</button>
+			  </div>
+		  </form>
+	    </div>
+	  </div>
+	</div>
+	<!-- MODEL结束 -->
+	<!-- 班级修改model窗口 -->
+    <div class="modal fade" id="modfiyGrade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">班级信息修改</h4>
+	      </div>
+	      <form action="" class="form-horizontal" method="post">
+		      <div class="modal-body">
+				<div class="form-group">
+			       <label class="col-sm-3 control-label">班级编号：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="text" value="1" readonly="readonly">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不可修改</label>
+			    </div>
+			     <div class="form-group">
+			       <label class="col-sm-3 control-label">班级名称：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="text" value="软件开发一班">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不能为空</label>
+			    </div>
+			    <div class="form-group">
+			       <label class="col-sm-3 control-label">班级详情：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="text" value="中兴软件开发一班">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不能为空</label>
+			    </div>
+		      </div>
+		      <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">关&nbsp;&nbsp;闭</button>
+		          <button type="reset" class="btn btn-default">重&nbsp;&nbsp;置</button>
+		          <button type="submit" class="btn btn-default">修&nbsp;&nbsp;改</button>
+			  </div>
+		  </form>
+	    </div>
+	  </div>
+	</div>
+	<!-- MODEL结束 -->
+	<!-- 班级添加model窗口 -->
+    <div class="modal fade" id="addGrade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">新班级添加</h4>
+	      </div>
+	      <form action="" class="form-horizontal" method="post">
+		      <div class="modal-body">
+			     <div class="form-group">
+			       <label class="col-sm-3 control-label">班级名称：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="text">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不能为空</label>
+			    </div>
+			    <div class="form-group">
+			       <label class="col-sm-3 control-label">班级详情：</label>
+			       <div class="col-sm-6">
+			         <input class="form-control" type="text">
+			       </div>
+			       <label class="col-sm-3 control-label error-info" style="text-align:left;">*不能为空</label>
+			    </div>
+		      </div>
+		      <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">关&nbsp;&nbsp;闭</button>
+		          <button type="reset" class="btn btn-default">重&nbsp;&nbsp;置</button>
+		          <button type="submit" class="btn btn-default">添&nbsp;&nbsp;加</button>
+			  </div>
+		  </form>
+	    </div>
+	  </div>
+	</div>
+	<!-- MODEL结束 -->
+  </body>
+</html>

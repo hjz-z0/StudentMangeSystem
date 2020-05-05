@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-mappings>
+	<action path="/sysuser/login"  type="com.zte.sms.action.SysuserAction"  method="login">
+		<result name="admin"  path="/WEB-INF/pages/adminPage/adminMain1.jsp"/>
+		<result name="student"  path="/WEB-INF/pages/studentPage/studentMain.jsp"/>
+		<result name="fail"  path="/login.jsp"/>
+	</action>
+	
+	<!-- 显示首页(非ajax) -->
+	<action path="/student/findAll" type="com.zte.sms.action.StudentAction" method="findStudents">
+		<result name="adminMain" path="/WEB-INF/pages/adminPage/adminMain.jsp"/>
+	
+	</action>
+	<!-- 显示首页 -->
+	<action path="/sysuser/toAdminMain" type="com.zte.sms.action.SysuserAction" method="toAdminMain">
+		<result name="adminMain" path="/WEB-INF/pages/adminPage/adminMain1.jsp"/>
+	
+	</action>
+	
+	<!-- ajax分页 -->
+	<action path="/student/findAllByPage" type="com.zte.sms.action.StudentAction" 
+	method="findStudentsByPage">
+	   <result type="json"/>
+	</action>
+	
+	<!-- ajax修改管理员密码 -->
+	<action path="/sysuser/modifyPwd" type="com.zte.sms.action.SysuserAction" 
+	method="modifyPwd">
+		<result type="json"/>
+	</action>
+	
+	<!-- 退出系统  -->
+	<action path="/sysuser/logOut" type="com.zte.sms.action.SysuserAction" 
+	method="logOut">
+		<result type="json"/>
+	</action>
+	
+	<!-- 学生管理 -->
+	<action path="/student/studentManage" type="com.zte.sms.action.StudentAction" 
+	method="toStudentManager">
+		<result name="toStudentManager" path="/WEB-INF/pages/adminPage/studentManager.jsp"/>
+	</action>
+	
+	<!-- 校验用户名是否已经存在  -->
+	<action path="/student/findByUsername" type="com.zte.sms.action.StudentAction" 
+	method="findByUsername">
+		<result type="json"/>
+	</action>
+	
+	<!-- 新增学员 -->
+	<action path="/student/addStudent" type="com.zte.sms.action.StudentAction" 
+	method="addStudent">
+		<result name="toStudentManager" path="/student/studentManage.do"/>
+	</action>
+	
+	<!-- 显示修改学员页面 -->
+	<action path="/student/findById" type="com.zte.sms.action.StudentAction" 
+	method="findById">
+		<result type="json"/>
+	</action>
+	
+	<!-- 修改学员 -->
+	<action path="/student/modifyStudent" type="com.zte.sms.action.StudentAction" 
+	method="modifyStudent">
+		<result name="toStudentManager" path="/student/studentManage.do"/>
+	</action>
+	
+	<!-- 删除学员 -->
+	<action path="/student/deleteStudent" type="com.zte.sms.action.StudentAction" 
+	method="deleteStudent">
+		<result name="toStudentManager" path="/student/studentManage.do"/>
+	</action>
+	
+	<!-- 导出数据到excel文件 -->
+	<action path="/student/exportExcel" type="com.zte.sms.action.StudentAction" 
+	method="exportExcel">
+	    <!-- 不需要返回值，不是返回json -->
+		<result type="json"/>
+	</action>
+	
+	<!-- 导出数据到数据库 -->
+	<action path="/student/importExcel" type="com.zte.sms.action.StudentAction" 
+	method="importExcel">
+		<result name="toStudentManager" path="/student/studentManage.do"/>
+	</action>
+	
+	<!-- 按条件查询 -->
+	<action path="/student/findByCondition" type="com.zte.sms.action.StudentAction" 
+	method="findByCondition">
+		<result type="json"/>
+	</action>
+</action-mappings>
